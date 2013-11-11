@@ -7,7 +7,7 @@ def ping(ip, time)
   if time == '+'
     if exit_st==0
       pars = /time=([0-9]+\.[0-9]+) ms/
-      @ping_time = result.scan(pars).flatten!.first.to_f
+      @ping_time = ((result.scan(pars).flatten!) ||[-1]).first.to_f
     else
       @ping_time = nil
     end
